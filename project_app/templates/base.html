@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolves Artistry/{{title}}</title>
+    {% load static %}<link rel="icon" type='image/png' href="{%static '/base/images/icon1.png'%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+    *{
+        margin:0px;
+        padding:0px
+        box-sizing:border-box;
+    }
+    header{
+        background-color:black;
+        color:#32a8a2;
+        font-family:'Updock', cursive;
+        z-index: 1;
+    }
+    header span{
+        float:right;
+        height:50px;
+        font-size:30px;
+        padding-top:12px;
+    }
+    header span a{
+        padding:5px;
+        margin:10px;
+        text-decoration:none;
+        color:#32a8a2;
+    }
+    header a:hover{
+        border-bottom:1px solid #32a8a2;
+        transition-duration:0.5s;
+    }
+    header a.active{
+        border-bottom:1px solid #a8327e;
+        transition-duration:0.5s;
+    }
+    .menu{
+        height:40px;
+        align-items:center;
+        display:none;
+    }
+    .menu div{
+        background-color:#32a8a2;
+        padding:1px;
+        margin:8px;
+        width:25px;
+        transition-duration:0.3s;
+    }
+    .open #line1{
+        position:relative;
+        transform:rotate(45deg) translate(3px,10px);
+        transition-duration:0.3s;
+    }
+    .open #line2{
+        background:transparent;
+        transition-duration:0.3s;
+    }
+    .open #line3{
+        position:relative;
+        transform:rotate(-45deg) translate(3px,-10px);
+        transition-duration:0.3s;
+    }
+    .hidden_menu_nav{
+        background-color:black;
+        padding-left:10px;
+        display:none;
+    }
+    .hidden_menu_nav a{
+        color:#32a8a2;
+        display:block;
+        text-decoration:none;
+        font-size:30px;
+        font-family:'Updock', cursive;
+    }
+    .hidden_menu_nav a:hover{
+        border-bottom:1px solid #32a8a2;
+        transition-duration:0.3s;
+    }
+    .hidden_menu_nav a.active{
+        border-bottom:1px solid #a8327e;
+        transition-duration:0.3s;
+    }
+    @media (max-width:530px){
+        header span{
+            display:none;
+        }
+        .menu{
+            display:inline;
+            float:right;
+            margin:10px;
+        }
+    }
+    </style>
+    <header style='position:fixed;width:100%;'>
+        <img src="{%static 'base/images/icon1.png' %}" alt="icon" style='height: 60px;width:120px;'>
+        <span style='float:right;'>
+            <a href="/home" class='Home'>Home</a>
+            <a href="/Blogs" class='Blog'>Blog</a>
+            
+            <a href="/Creater" class='Creater'>Creater</a>
+        </span>
+        <div class='menu'>
+            <div id='line1'></div>
+            <div id='line2'></div>
+            <div id='line3'></div>
+        </div>
+    </header>
+    <div class='hidden_menu_nav'>
+        <a href="/home" class='Home'>Home</a>
+        <a href="/Blogs" class='Blog'>Blog</a>
+        
+        <a href="/Creater" class='Creater'>Creater</a>
+    </div>
+    <script>
+        const under_line=document.getElementsByClassName('{{ page_name }}');
+        under_line[0].classList.add('active');
+        under_line[1].classList.add('active');
+    </script>
+    <script>
+        const a=document.querySelector('.menu');
+        const b=document.querySelector('.hidden_menu_nav');
+        menu_open=false;
+        a.addEventListener('click',()=>{
+            if(!menu_open){
+                a.classList.add('open');
+                b.style.display='block';
+                menu_open=true;
+            }else{
+                a.classList.remove('open');
+                b.style.display='none';
+                menu_open=false;
+            }
+        });
+    </script>
+    <style>
+        section{
+            color:white;
+            {% load static %} background:url("{%static 'base/images/bg_img.png'%}") no-repeat center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-color:black;
+        }
+    </style>
+
+    <div style="padding-top:65px;">{% block content %}{% endblock content %}</div>
+    <style>
+        footer{
+            padding:10px;
+            text-align:center;
+        }
+        footer a{
+            color:white;
+            font-size:30px;
+            margin:5px;
+        }
+        @media(max-width:322px){
+            #name{
+                display:block;
+            }
+
+        }
+    </style>
+    <footer style='background-color:#444;color:white;'>
+        <h3 style="padding-bottom:5px;font-size:15px;">Developed By : <span id='name'>$ u m i t &nbsp &nbspP @ t h @ k</span></h3>
+        <p style='padding:5px 0px;'>Student at NIET...For more information about me contect here</p>
+        <a href="https://github.com/Sumitpathak721" target='_blank'><i class='bi bi-github'></i></a>
+        <a href="https://www.instagram.com/__sumitpathak__/" target='_blank'><i class='bi bi-instagram'></i></a>
+        <a href="mailto:pathaksumit721@gmail.com" target='_blank'><i class='bi bi-envelope'></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100050752458112" target='_blank'><i class='bi bi-facebook'></i></a>
+        <p>Copyright 2022</p>
+        
+    </footer>
+</body>
+</html>

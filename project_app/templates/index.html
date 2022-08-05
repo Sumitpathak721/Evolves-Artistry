@@ -1,0 +1,163 @@
+{% extends 'base.html'%} {% block content %}
+<section>
+  <style>
+    .heading{
+        margin:0px;
+        padding:0px;
+        background-color:black;
+        display:flex;
+        width:100%;
+    }
+    .heading img{
+        margin:0px;
+        padding:0px;
+        margin-top:0px;
+        width:400px;
+    }
+    .heading .content{
+        display:inline;
+
+        width:70%;
+        height:400px;
+        text-align:center;
+        color:#32a8a2;
+        background-color:block;
+
+    }
+    .contect_icon{
+        padding-top:30px;
+    }
+    .contect_icon i{
+        font-size:30px;
+        margin:10px;
+    }
+    .contect_icon a{
+        color:#32a8a2;
+        text-decoration:none;
+    }
+    #all_data{
+        width:100%;
+        
+        
+
+    }
+    @media(max-width:530px){
+        .content{
+            display:block;
+        }
+        .heading img{
+            display:block;
+            margin:auto;
+            width:100%;
+        }
+        .heading{
+            display:block;
+        }
+
+    }
+  </style>
+  <div class="heading">
+    {% load static %}<img src="{%static 'home/images/img1.jpeg'%}" alt="" />
+    <div class="content">
+      <br /><br /><br /><br />
+      <b>
+        <p
+          style="
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Updock', cursive;
+          "
+        >
+          Hi{% load static %}<img
+            src="{%static 'home/images/boy_icon.png'%}"
+            style="height: 48px; width: 48px; margin: 2px"
+            alt=""
+          >
+        </p>
+        <p>Its @ Evolve's Artistry here from India,</p>
+        <p>Here I provide all my art work</p>
+      </b>
+      <div class="contect_icon">
+        <a href="https://www.youtube.com/channel/UCRK7q4JUgEWdinmvtZAfKbw"
+          ><i class="bi bi-youtube"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/invites/contact/?i=1tnu2dmlp13dh&utm_content=m7am1v5"
+          ><i class="bi bi-instagram"></i
+        ></a>
+        <a href="https://www.facebook.com/evolvesartistry888"
+          ><i class="bi bi-facebook"></i
+        ></a>
+        <a href="mailto:evolvesartistry888@gmail.com"
+        ><i class='bi bi-envelope'></i>
+
+        </a>
+        <a href="https://pin.it/6KdUtUP"><i class="bi bi-pinterest"></i></a>
+      </div>
+    </div>
+  </div>
+  <style>
+    .data {
+      display: flex;
+      margin: 10px;
+      margin-right: 10px;
+      margin-bottom: 0px;
+      background-color: black;
+      width: 90%;
+    }
+    .data img {
+      width: 300px;
+    }
+    .Description {
+      display: inline;
+      width: 90%;
+      height: 400px;
+      padding:10px;
+      
+    }
+    @media (max-width: 680px) {
+      .Description {
+        display: block;
+        height:auto;
+      }
+      .data img {
+        display: block;
+        margin: auto;
+        width: 90%;
+      }
+      .data {
+        display: block;
+        width:90%
+      }
+    }
+    @media (max-width: 374px) {
+      .Description {
+        font-size: 75%;
+      }
+    }
+  </style>
+  <div id="all_data">
+    {% if all_data %} {% for data in all_data %}
+    <div class="data">
+      <img src="/images/{{data.image}}" />
+      <div class="Description" style="">
+        <h1 style='text-align:center;'>{{data.title}}</h1>
+        <br /><br />
+        <p>
+          <style>
+            .Description p h1,h2,h3,h4,h5,h6{
+              display:inline;
+            }
+          </style>
+          {{data.desc|safe}}
+        </p>
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <h1>No Data Found</h1>
+    {% endif %}
+  </div>
+</section>
+{% endblock content %}

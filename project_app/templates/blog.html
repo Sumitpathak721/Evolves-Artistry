@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evolves Artstry/blog</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Updock&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <header>
+      <style>
+        a {
+          color: black;
+        }
+      </style>
+      <a href="/Blogs"
+        ><i
+          class="bi bi-arrow-left-circle-fill"
+          style="font-size: 50px; padding-left: 10px"
+        ></i
+      ></a>
+
+      <a href="/Blogs"
+        ><i
+          class="bi bi-x-lg"
+          style="font-size: 50px; float: right; padding-right: 10px"
+        ></i
+      ></a>
+    </header>
+    <section>
+      <style>
+        img {
+          display: block;
+          height: 600px;
+          margin: 10px auto;
+        }
+        h1 {
+          font-size: 50px;
+          text-align: center;
+          color: #32a8a2;
+          font-family: "Updock", cursive;
+        }
+        div {
+          font-size: 20px;
+        }
+        @media (max-width: 750px) {
+          img {
+            width: 60%;
+            height: auto;
+          }
+        }
+      </style>
+      <h1>{{blog_name.title}}</h1>
+      <a href="/images/{{blog_name.images}}" download><img src="/images/{{blog_name.images}}"/></a>
+      <div>
+        <p>{{blog_name.desc}}</p>
+        <p>{{blog_name.wide_desc|safe}}</p>
+        <p style='margin-bottom:20px;'><b>Published date:</b>{{blog_name.date}}
+            
+        </p>
+      </div>
+    </section>
+    <style>
+      footer {
+        padding: 10px;
+        text-align: center;
+        margin:-8px;
+      }
+      footer a {
+        color: white;
+        font-size: 30px;
+        margin: 5px;
+      }
+      @media(max-width:322px){
+        #name{
+            display:block;
+        }
+
+      }
+    </style>
+    <footer style="background-color: #444; color: white">
+      <h3 style="padding-bottom: 5px; font-size: 15px">
+        Developed By : <span id='name'>$ u m i t &nbsp &nbspP @ t h @ k</span>
+      </h3>
+      <p style="padding: 5px 0px">
+        Student at NIET...For more information about him contect here
+      </p>
+      <a href="https://github.com/Sumitpathak721" target="_blank"
+        ><i class="bi bi-github"></i
+      ></a>
+      <a href="https://www.instagram.com/__sumitpathak__/" target="_blank"
+        ><i class="bi bi-instagram"></i
+      ></a>
+      <a href="mailto:pathaksumit721@gmail.com" target="_blank"
+        ><i class="bi bi-envelope"></i
+      ></a>
+      <a
+        href="https://www.facebook.com/profile.php?id=100050752458112"
+        target="_blank"
+        ><i class="bi bi-facebook"></i
+      ></a>
+      <p>Copyright 2022</p>
+    </footer>
+  </body>
+</html>

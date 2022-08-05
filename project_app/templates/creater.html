@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    #main{
+        
+        margin:auto;
+        background-color:black;
+        
+        color:white;
+        
+    }
+    #desc{
+        width:500px;
+        margin:auto;
+        font-size:30px;
+        
+        
+    }
+    #desc p{
+        padding:10px 0;
+    }
+    #desc img{
+        height:auto;
+        width:50px;
+    }
+    #Namaste{
+        font-size:300%;
+        margin:auto;
+        font-family:"Updock",cursive;
+        text-align:center;
+        color:#32a8a2;
+    }
+    @media(max-width:530px){
+        #desc{
+            width:80%;
+            font-size:20px;
+        }
+        #Namaste{
+            font-size:50px;
+        }
+    }
+</style>
+<div id='main'>
+    
+    <div id='desc'>
+        <p id='Namaste' style=>Namaste
+        {% load static %}<img src="{%static 'creater/boy (1).png'%}" >
+        </p>
+        <p style='display:inline;'>
+            My name is Sumit Pathak an ordinary person with extra ordinary mindset. 
+        
+        I am a <i>Computer Science</i> Student and a WEB DEVELOPER.</p>
+        <p>
+            I love to solve code problem.
+        </p>
+        <p>
+            
+            I primarily use python and java but picking up new language and framework isn't a problem.
+            I'm comfortable to work as a frontend and backend as well.
+            I have great skill to make website alive.
+        </p>
+        <p>
+        </p>
+    </div>
+
+</div>
+{% endblock content %}

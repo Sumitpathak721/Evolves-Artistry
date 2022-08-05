@@ -1,0 +1,78 @@
+
+{% extends "base.html" %} {% block content %}
+<!--Heading-->
+<style>
+  #heading {
+    background-color: black;
+    color: #32a8a2;
+    font-family: "Updock", cursive;
+    font-size: 100px;
+    text-align: center;
+  }
+  @media (max-width: 330px) {
+    #heading {
+      font-size: 65px;
+    }
+  }
+</style>
+<div id="heading">
+  <i class="bi bi-brush">B l o g</i>
+</div>
+<!--main_content-->
+<style>
+  #main{
+    margin:auto;
+    margin-bottom:0px;
+    width:95%;
+    padding:auto;
+  }
+  .blog{
+    display:inline-block;
+    margin:2%;
+    margin-left:4%;
+    border:1px solid grey;
+    border-radius:10px;
+    width:300px;
+    height:auto;
+    max-height:350px;
+    position:relative;
+
+  }
+  .blog img{
+    height:250px;
+    width:100%;
+    border-radius:10px;
+  }
+  @media(max-width:1165px){
+    .blog{
+      width:400px;
+    }
+  }
+  @media(max-width:978px){
+    .blog{
+      width:40%;
+    }
+  }
+  @media(max-width:620px){
+    .blog{
+      width:60%;
+      margin-left:20%;
+      font-size:100%;
+      
+    }
+    .blog img{
+      height:auto;
+    }
+  }
+</style>
+<div id='main'>
+  {% for blog in blogs %}
+  <a href="/Blogs/{{blog}}">
+  <div class='blog'>
+    
+    <img src="/images/{{blog.images}}">
+    <h1 style="text-align:center;color:#3268a2;font-family:'Updock',cursive;">{{blog.title}}</h1>
+  </div></a>
+  {% endfor %}
+</div>
+{% endblock content %}
